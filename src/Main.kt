@@ -60,7 +60,12 @@ fun themSV(): KetQua {
         val mh = MonHoc(maMonHoc, tenMonHoc, diemMonHoc, soTinChi)
         dsMonHoc.add(mh)
     }
-    val sv = SinhVien(maSV, ten, tuoi, dsMonHoc)
+    val sv = SinhVien(
+        ma = maSV,
+        ten = ten,
+        tuoi = tuoi,
+        dsMonHoc = dsMonHoc
+    )
     StudentRepo.themSV(sv)
     return KetQua.ThanhCong("Them sinh vien thanh cong")
 }
@@ -83,7 +88,7 @@ fun timKiemSV(): KetQua {
 }
 
 fun xoaSV(): KetQua {
-    println("Nhap ma sinh vien can xoa:")
+    println("Nhap ma sinh  vien can xoa:")
     val ma = readLine()!!.toInt()
     if (StudentRepo.xoaSV(ma)) {
         return KetQua.ThanhCong("Xoa sinh vien thanh cong sinh vien co ma $ma")
