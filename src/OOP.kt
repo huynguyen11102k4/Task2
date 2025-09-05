@@ -138,7 +138,7 @@ class Cat : Animal() {
 }
 
 /* Class Types */
-// Data Class
+// Data Class (lưu trữ dữ liệu)
 data class Room(val roomNumber: Int, val capacity: Int){
     //Tự động override toString(), equals(), hashCode() hoặc có thể tự override lại
     override fun toString(): String {
@@ -155,11 +155,11 @@ data class Room(val roomNumber: Int, val capacity: Int){
         return result
     }
 }
-// Enum Class
+// Enum Class (là tập hợp các hằng số)
 enum class Day {
     MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
 }
-// Sealed Class
+// Sealed Class (không thể có lớp con bên ngoài file khai báo)
 sealed class KetQua {
     data class ThanhCong(val giaTri: String) : KetQua()
     data class ThatBai(val loiNhan: String) : KetQua()
